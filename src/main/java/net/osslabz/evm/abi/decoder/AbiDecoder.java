@@ -116,6 +116,6 @@ public class AbiDecoder {
     }
     
     public Map<String, String> getMethods() {
-    	return this.methodSignatures.keySet().stream().collect(Collectors.toMap(k -> k, k -> this.methodSignatures.get(k).getName()));
+    	return this.methodSignatures.keySet().stream().collect(Collectors.toMap(k -> k, k -> this.methodSignatures.get(k).name));
     }
 }

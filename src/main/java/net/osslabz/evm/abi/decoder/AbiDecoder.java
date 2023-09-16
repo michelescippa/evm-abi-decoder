@@ -14,6 +14,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class AbiDecoder {
 
@@ -112,5 +113,9 @@ public class AbiDecoder {
             }
         }
         return resolvedCalls;
+    }
+    
+    public Map<String, String> getMethods() {
+    	return this.methodSignatures.keySet().stream().collect(Collectors.toMap(k -> k, k -> this.methodSignatures.get(k).getName()));
     }
 }

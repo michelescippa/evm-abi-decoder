@@ -115,7 +115,7 @@ public class AbiDecoder {
         return resolvedCalls;
     }
     
-    public Map<String, String> getMethods() {
-    	return this.methodSignatures.keySet().stream().collect(Collectors.toMap(k -> k, k -> this.methodSignatures.get(k).name));
+    public Map<String, AbiDefinition.Entry> getMethodSignatures() {
+    	return this.methodSignatures;
     }
 }
